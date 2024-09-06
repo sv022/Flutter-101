@@ -1,3 +1,10 @@
-# aidstore
+# AidStore
 
-A new Flutter project.
+Онлайн-магазин медицинских препаратов AidStore.
+
+Установленные расширения
+![alt text](assets/image.png)
+
+Установлена Android Studio и Android Virtual Device
+![alt text](assets/image-1.png)
+

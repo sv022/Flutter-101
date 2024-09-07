@@ -8,11 +8,9 @@
 <br>
 Установлена Android Studio и Android Virtual Device
 <br>
-<br>
-Уcтановлена Android Studio и Android Virtual Device
-<br>
 ![alt text](assets/image-1.png)
 <br>
 Начальное приложение
+<br>
 ![alt text](image.png)
 <br>

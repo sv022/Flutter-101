@@ -12,5 +12,5 @@
 <br>
 Начальное приложение
 <br>
-![alt text](image.png)
+![alt text](assets/image2.png)
 <br>

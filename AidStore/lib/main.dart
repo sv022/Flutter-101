@@ -62,18 +62,18 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 16),
             Row(
-                children: [
-                  Checkbox(
-                    value: _rememberMe,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        _rememberMe = value ?? false;
-                      });
-                    },
-                  ),
-                  const Text('Запомнить меня'),
-                ],
-              ),
+              children: [
+                Checkbox(
+                  value: _rememberMe,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _rememberMe = value ?? false;
+                    });
+                  },
+                ),
+                const Text('Запомнить меня'),
+              ],
+            ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {

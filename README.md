@@ -1,14 +1,6 @@
-# Практическая работа №1 Святкин С.
+# Практическая работа №2 Святкин С.
 
-Установленные расширения
+Результат
 <br>
-![alt text](assets/image.png)
-<br>
-Установлена Android Studio и Android Virtual Device
-<br>
-![alt text](assets/image-1.png)
-<br>
-Начальное приложение
-<br>
-![alt text](assets/image2.png)
+![alt text](assets/Image21.png)
 <br>

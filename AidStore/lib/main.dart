@@ -100,6 +100,16 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(color: Colors.blue), // Синий текст
               ),
             ),
+            const SizedBox(height: 16),
+            TextButton(
+              onPressed: () {
+                // Логика для восстановления пароля
+              },
+              child: const Text(
+                'Восстановить пароль',
+                style: TextStyle(color: Colors.grey), // Серый текст
+              ),
+            ),
           ],
         ),
       ),

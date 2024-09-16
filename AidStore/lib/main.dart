@@ -75,7 +75,31 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             const SizedBox(height: 16),
-            
+            ElevatedButton(
+              onPressed: () {
+                // Логика для авторизации
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Синий цвет кнопки
+              ),
+              child: const Text(
+                'Войти',
+                style: TextStyle(color: Colors.white), // Белый текст
+              ),
+            ),
+            const SizedBox(height: 16),
+            OutlinedButton(
+              onPressed: () {
+                // Логика для регистрации
+              },
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Colors.blue), // Синий контур
+              ),
+              child: const Text(
+                'Регистрация',
+                style: TextStyle(color: Colors.blue), // Синий текст
+              ),
+            ),
           ],
         ),
       ),

@@ -31,7 +31,7 @@ class ListingPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 20.0),
+              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,12 +50,12 @@ class ListingPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 32),
                   Text(
                     listing.description,
                     style: const TextStyle(
                       fontSize: 18,
-                      color: Color.fromARGB(221, 62, 60, 60),
+                      color: Color.fromARGB(255, 55, 55, 55),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -69,10 +69,9 @@ class ListingPage extends StatelessWidget {
                           color: Color.fromARGB(255, 55, 55, 55),
                         ),
                       ),
-                      const SizedBox(width: 8),
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 32),
                   Text(
                     listing.adress,
                     style: const TextStyle(

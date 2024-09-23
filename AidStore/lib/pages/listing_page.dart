@@ -18,15 +18,12 @@ class ListingPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-              child: Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${listing.img[0]}.png',
-                    width: 360,
-                  ),
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${listing.img[0]}.png',
+                  width: 360,
                 ),
               ),
             ),
@@ -52,24 +49,20 @@ class ListingPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   Text(
+                    '${listing.price}₽',
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 55, 55, 55),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
                     listing.description,
                     style: const TextStyle(
                       fontSize: 18,
                       color: Color.fromARGB(255, 55, 55, 55),
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Text(
-                        '${listing.price}₽',
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 55, 55, 55),
-                        ),
-                      ),
-                    ],
                   ),
                   const SizedBox(height: 32),
                   Text(

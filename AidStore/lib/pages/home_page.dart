@@ -12,15 +12,17 @@ class HomePage extends StatelessWidget {
         title: Image.network(
           'https://raw.githubusercontent.com/sv022/MusicTrade/refs/heads/main/images/guitar_logo.png',
           height: 50,
-          width: double.infinity,
         ),
       ),
       backgroundColor: Colors.white,
-      body: ListView.builder(
-        itemCount: listings.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListingCard(listing: listings[index]);
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          itemCount: listings.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListingCard(listing: listings[index]);
+          },
+        ),
       ),
     );
   }

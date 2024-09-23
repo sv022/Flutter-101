@@ -10,9 +10,8 @@ class ListingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
-      margin: const EdgeInsets.all(16),
-      child: InkWell(
+      elevation: 2,
+      child: GestureDetector(
         onTap: () {
           Navigator.push(
             context,
@@ -21,14 +20,12 @@ class ListingCard extends StatelessWidget {
             ),
           );
         },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 30.0),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.network(
@@ -37,44 +34,40 @@ class ListingCard extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    listing.title,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Text(
-                        '${listing.price}₽',
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 55, 55, 55),
-                        ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      listing.title,
+                      style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    listing.adress,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
                     ),
-                  )
-                ],
+                    const SizedBox(height: 16),
+                    Text(
+                      '${listing.price}₽',
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 55, 55, 55),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      listing.adress,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

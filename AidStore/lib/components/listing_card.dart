@@ -10,7 +10,6 @@ class ListingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
       child: GestureDetector(
         onTap: () {
           Navigator.push(
@@ -34,6 +33,7 @@ class ListingCard extends StatelessWidget {
                   ),
                 ),
               ),
+              
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -46,7 +46,9 @@ class ListingCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     const SizedBox(height: 16),
+
                     Text(
                       '${listing.price}₽',
                       style: const TextStyle(
@@ -54,8 +56,10 @@ class ListingCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 55, 55, 55),
                       ),
+
                     ),
                     const SizedBox(height: 16),
+
                     Text(
                       listing.adress,
                       style: const TextStyle(

@@ -39,7 +39,9 @@ class ListingPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
                   Text(
                     listing.category,
                     style: const TextStyle(
@@ -47,7 +49,9 @@ class ListingPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+
                   const SizedBox(height: 32),
+
                   Text(
                     '${listing.price}₽',
                     style: const TextStyle(
@@ -56,7 +60,9 @@ class ListingPage extends StatelessWidget {
                       color: Color.fromARGB(255, 55, 55, 55),
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
                   Text(
                     listing.description,
                     style: const TextStyle(
@@ -64,7 +70,9 @@ class ListingPage extends StatelessWidget {
                       color: Color.fromARGB(255, 55, 55, 55),
                     ),
                   ),
+
                   const SizedBox(height: 32),
+                  
                   Text(
                     listing.adress,
                     style: const TextStyle(

@@ -35,7 +35,7 @@ class ListingPage extends StatelessWidget {
                   Text(
                     listing.title,
                     style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -45,7 +45,7 @@ class ListingPage extends StatelessWidget {
                   Text(
                     listing.category,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.grey,
                     ),
                   ),

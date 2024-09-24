@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../pages/listing_page.dart';
 import '../models/listing.dart';
 
+
 class ListingCard extends StatelessWidget {
   final Listing listing;
-
   const ListingCard({super.key, required this.listing});
 
   @override
@@ -14,9 +14,7 @@ class ListingCard extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => ListingPage(listing: listing),
-            ),
+            MaterialPageRoute(builder: (context) => ListingPage(listing: listing)),
           );
         },
         child: Padding(
@@ -33,7 +31,7 @@ class ListingCard extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(

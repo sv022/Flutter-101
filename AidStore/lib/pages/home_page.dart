@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/listing_card.dart';
 import '../models/listing.dart';
 
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 

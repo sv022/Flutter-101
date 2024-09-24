@@ -4,7 +4,6 @@ import '../models/listing.dart';
 
 class ListingPage extends StatelessWidget {
   final Listing listing;
-
   const ListingPage({super.key, required this.listing});
 
   @override
@@ -72,7 +71,7 @@ class ListingPage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 32),
-                  
+
                   Text(
                     listing.adress,
                     style: const TextStyle(

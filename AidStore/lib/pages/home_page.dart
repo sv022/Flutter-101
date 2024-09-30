@@ -1,3 +1,4 @@
+import 'package:aidstore/pages/add_listing_page.dart';
 import 'package:flutter/material.dart';
 import '../components/listing_card.dart';
 import '../models/listing.dart';
@@ -24,6 +25,16 @@ class HomePage extends StatelessWidget {
             return ListingCard(listing: listings[index]);
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddListingPage()),
+          )
+        },
+        tooltip: 'Add Note',
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/listing_page.dart';
 import '../models/listing.dart';
@@ -58,13 +59,39 @@ class ListingCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    Text(
-                      listing.adress,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey,
+                    Row(
+                    children: [
+                      Text(
+                        listing.adress,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
                       ),
-                    )
+                    const SizedBox(width: 300),
+                      TextButton(
+                        onPressed: () {
+                          for (var l in listings) {
+                            if (l == listing) {
+                              listings.remove(l);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HomePage()),
+                              );
+                            }
+                          }
+                        },
+                        child: const Text(
+                          'Удалить',
+                          style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 55, 55, 55),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                   ],
                 ),
               ),

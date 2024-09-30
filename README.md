@@ -3,16 +3,16 @@
 <br>
 Мобильное приложение для моего сайта [MusicTrade.ru](https://github.com/sv022/MusicTrade/tree/main)
 <br>
-Верстка главной страницы
+Добавлена кнопка для открытия страницы создания объявления
 <br>
-![alt text](assets/Image31.png)
+![alt text](assets/Image41.png)
 <br>
-Верстка компонента для элементов списка объявлений
+Страница создания объявления
 <br>
-![alt text](assets/Image32.png)
+![alt text](assets/Image42.png)
 <br>
-Верстка страницы объявления
+Результат
 <br>
-![alt text](assets/Image33.png)
+![alt text](assets/Image43.png)
 <br>
 

@@ -19,7 +19,12 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.45 / 2,
+            mainAxisSpacing: 2,
+          ),
           itemCount: listings.length,
           itemBuilder: (BuildContext context, int index) {
             return ListingCard(listing: listings[index]);

@@ -1,4 +1,3 @@
-import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/listing_page.dart';
 import '../models/listing.dart';
@@ -23,12 +22,15 @@ class ListingCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${listing.img[0]}.png',
-                    width: 340,
+              SizedBox(
+                height: 200,
+                child: Center(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network(
+                      'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${listing.img[0]}.png',
+                      width: 340,
+                    ),
                   ),
                 ),
               ),
@@ -38,11 +40,14 @@ class ListingCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      listing.title,
-                      style: const TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 80,
+                      child: Text(
+                        listing.title,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
 
@@ -66,28 +71,6 @@ class ListingCard extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 14,
                           color: Colors.grey,
-                        ),
-                      ),
-                    const SizedBox(width: 300),
-                      TextButton(
-                        onPressed: () {
-                          for (var l in listings) {
-                            if (l == listing) {
-                              listings.remove(l);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => HomePage()),
-                              );
-                            }
-                          }
-                        },
-                        child: const Text(
-                          'Удалить',
-                          style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 55, 55, 55),
-                          ),
                         ),
                       ),
                     ],

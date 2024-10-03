@@ -79,7 +79,7 @@ class AddListingPage extends StatelessWidget {
                         adressController.text, 
                         [], 
                         DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day).toString(), 
-                        ['placeholder'], false);
+                        ['placeholder']);
 
                         listings.add(newListing);
 

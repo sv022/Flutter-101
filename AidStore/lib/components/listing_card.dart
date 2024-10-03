@@ -1,4 +1,3 @@
-import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/listing_page.dart';
 import '../models/listing.dart';
@@ -75,15 +74,6 @@ class ListingCard extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      const SizedBox(width: 160),
-                      IconButton(onPressed: (){
-                        listings.remove(listing);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const HomePage()),
-                        );
-                      },
-                      icon: const Icon(Icons.delete))
                     ],
                   )
                   ],

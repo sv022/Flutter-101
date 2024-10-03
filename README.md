@@ -3,16 +3,12 @@
 <br>
 Мобильное приложение для моего сайта [MusicTrade.ru](https://github.com/sv022/MusicTrade/tree/main)
 <br>
-Добавлена кнопка для открытия страницы создания объявления
+Главная страница
 <br>
-![alt text](assets/Image41.png)
+![alt text](assets/Image32.png)
 <br>
-Страница создания объявления
+Страница объявления
 <br>
-![alt text](assets/Image42.png)
-<br>
-Результат
-<br>
-![alt text](assets/Image43.png)
+![alt text](assets/Image33.png)
 <br>
 

@@ -43,7 +43,7 @@ class ListingCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 80,
+                      height: 40,
                       child: Text(
                         listing.title,
                         style: const TextStyle(
@@ -53,7 +53,7 @@ class ListingCard extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 8),
 
                     Text(
                       '${listing.price}₽',
@@ -64,7 +64,7 @@ class ListingCard extends StatelessWidget {
                       ),
 
                     ),
-                    const SizedBox(height: 1.5),
+                    const SizedBox(height: 4),
 
                     Row(
                     children: [
@@ -75,7 +75,7 @@ class ListingCard extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      const SizedBox(width: 80),
+                      const SizedBox(width: 160),
                       IconButton(onPressed: (){
                         listings.remove(listing);
                         Navigator.push(

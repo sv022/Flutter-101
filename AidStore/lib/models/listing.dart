@@ -8,9 +8,10 @@ class Listing {
   final List<String> tags;
   final String publishDate;
   final List<String> img;
+  bool isFavorite;
 
   Listing(this.id, this.title, this.price, this.category, this.description, 
-  this.adress, this.tags, this.publishDate, this.img);
+  this.adress, this.tags, this.publishDate, this.img, this.isFavorite);
 }
 
 List<Listing> listings = [
@@ -23,7 +24,8 @@ List<Listing> listings = [
     "ул. Октябрьская, 16",
     [],
     "2024-05-27",
-    ["10011", "10012", "10013"]
+    ["10011", "10012", "10013"],
+    false,
   ),
   Listing(
     2,
@@ -34,6 +36,9 @@ List<Listing> listings = [
     "ул. Металлургов, 78",
     [""],
     "2024-05-27",
-    ["10024", "10025", "10026", "10027"]
+    ["10024", "10025", "10026", "10027"],
+    false
   )
 ];
+
+List<Listing> favoriteListings = [];

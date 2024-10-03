@@ -1,28 +1,37 @@
 import 'package:aidstore/pages/add_listing_page.dart';
-import 'package:aidstore/pages/favorites_page.dart';
+import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../components/listing_card.dart';
 import '../models/listing.dart';
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class FavoritesPage extends StatefulWidget {
+  const FavoritesPage({super.key});
 
   @override
   HomePageState createState() => HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+class HomePageState extends State<FavoritesPage> {
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 1){
+      if (index == 0) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+      }
+      else if (index == 1){
         Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const FavoritesPage()),
           );
+      }
+      else if (index == 2){
+        
       }
     });
   }
@@ -45,9 +54,9 @@ class HomePageState extends State<HomePage> {
             childAspectRatio: 1.45 / 2,
             mainAxisSpacing: 2,
           ),
-          itemCount: listings.length,
+          itemCount: favoriteListings.length,
           itemBuilder: (BuildContext context, int index) {
-            return ListingCard(listing: listings[index]);
+            return ListingCard(listing: favoriteListings[index]);
           },
         ),
       ),

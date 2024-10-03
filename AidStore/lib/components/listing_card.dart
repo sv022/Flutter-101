@@ -3,18 +3,23 @@ import '../pages/listing_page.dart';
 import '../models/listing.dart';
 
 
-class ListingCard extends StatelessWidget {
-  final Listing listing;
+class ListingCard extends StatefulWidget {
   const ListingCard({super.key, required this.listing});
-
+  final Listing listing;
   @override
-  Widget build(BuildContext context) {
+  ListingCardState createState() => ListingCardState();
+}
+
+class ListingCardState extends State<ListingCard> {  
+  @override
+  Widget build(BuildContext context){
     return Card(
       child: GestureDetector(
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ListingPage(listing: listing)),
+            MaterialPageRoute(builder: (context) => ListingPage(listing: widget.listing),
+            )
           );
         },
         child: Padding(
@@ -28,7 +33,7 @@ class ListingCard extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
-                      'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${listing.img[0]}.png',
+                      'https://raw.githubusercontent.com/sv022/MockDB/refs/heads/main/MusicTrade/img/${widget.listing.img[0]}.png',
                       width: 340,
                     ),
                   ),
@@ -43,7 +48,7 @@ class ListingCard extends StatelessWidget {
                     SizedBox(
                       height: 80,
                       child: Text(
-                        listing.title,
+                        widget.listing.title,
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -53,21 +58,39 @@ class ListingCard extends StatelessWidget {
 
                     const SizedBox(height: 16),
 
-                    Text(
-                      '${listing.price}₽',
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 55, 55, 55),
-                      ),
-
+                    Row(
+                      children: [
+                        Text(
+                          '${widget.listing.price}₽',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 55, 55, 55),
+                          ),
+                        ),
+                        const SizedBox(width: 130,),
+                        IconButton(onPressed: () {
+                          setState(() {
+                            if (widget.listing.isFavorite) {
+                              favoriteListings.remove(widget.listing);
+                            } else {
+                              favoriteListings.add(widget.listing);
+                            }
+                            widget.listing.isFavorite = !widget.listing.isFavorite;
+                          });
+                        }, 
+                        icon: widget.listing.isFavorite ? 
+                          const Icon(Icons.favorite, color: Color.fromARGB(255, 183, 108, 51)) : 
+                          const Icon(Icons.favorite_border_outlined) 
+                        )
+                      ],
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 10),
 
                     Row(
                     children: [
                       Text(
-                        listing.adress,
+                        widget.listing.adress,
                         style: const TextStyle(
                           fontSize: 14,
                           color: Colors.grey,

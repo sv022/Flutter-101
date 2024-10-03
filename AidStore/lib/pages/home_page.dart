@@ -1,6 +1,5 @@
 import 'package:aidstore/pages/add_listing_page.dart';
 import 'package:aidstore/pages/favorites_page.dart';
-import 'package:aidstore/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import '../components/listing_card.dart';
 import '../models/listing.dart';
@@ -19,23 +18,11 @@ class HomePageState extends State<HomePage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 0){
-        Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-        );
-      }
-      else if (index == 1){
+      if (index == 1){
         Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const FavoritesPage()),
-        );
-      }
-      else if (index == 2){
-        Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ProfilePage()),
-        );
+          );
       }
     });
   }

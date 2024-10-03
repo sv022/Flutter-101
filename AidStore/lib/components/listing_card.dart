@@ -1,6 +1,8 @@
+import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/listing_page.dart';
 import '../models/listing.dart';
+
 
 
 class ListingCard extends StatelessWidget {
@@ -62,7 +64,7 @@ class ListingCard extends StatelessWidget {
                       ),
 
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 1.5),
 
                     Row(
                     children: [
@@ -73,6 +75,15 @@ class ListingCard extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
+                      const SizedBox(width: 80),
+                      IconButton(onPressed: (){
+                        listings.remove(listing);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const HomePage()),
+                        );
+                      },
+                      icon: const Icon(Icons.delete))
                     ],
                   )
                   ],

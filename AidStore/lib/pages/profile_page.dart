@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import '../components/bottom_menu.dart';
 
-class ProfilePage extends StatelessWidget {
+
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  ProfilePageState createState() => ProfilePageState();
+}
+
+class ProfilePageState extends State<ProfilePage> {
+  final int selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +82,7 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomMenu(selectedIndex: selectedIndex),
     );
   }
 }

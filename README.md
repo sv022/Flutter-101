@@ -3,18 +3,18 @@
 <br>
 Мобильное приложение для моего сайта [MusicTrade.ru](https://github.com/sv022/MusicTrade/tree/main)
 
-README в процессе
-<!-- <br>
-Добавлена кнопка для открытия страницы создания объявления
 <br>
-![alt text](assets/Image41.png)
+Изменено отображение элементов на главной странице
+При нажатии на иконку сердца объявления добавляются в избранное, а кнопка меняет цвет.
 <br>
-Страница создания объявления
+![alt text](assets/Image51.png)
 <br>
-![alt text](assets/Image42.png)
+Страница избранных объявлений
 <br>
-Результат
+![alt text](assets/Image52.png)
 <br>
-![alt text](assets/Image43.png)
+Страница профиля
 <br>
- -->
+![alt text](assets/Image53.png)
+<br>
+

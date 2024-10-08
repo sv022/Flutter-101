@@ -1,7 +1,9 @@
 import 'package:aidstore/pages/favorites_page.dart';
 import 'package:aidstore/pages/home_page.dart';
 import 'package:aidstore/pages/profile_page.dart';
+import 'package:aidstore/pages/auth_page.dart';
 import 'package:flutter/material.dart';
+import '../models/user.dart';
 
 
 class BottomMenu extends StatefulWidget {
@@ -30,10 +32,17 @@ class BottomMenuState extends State<BottomMenu> {
         );
       }
       else if (index == 2){
-        Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ProfilePage()),
-        );
+        if (currentUser.id == 0){
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AuthPage()),
+          );
+        } else {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()),
+          );
+        }
       }
     });
   }

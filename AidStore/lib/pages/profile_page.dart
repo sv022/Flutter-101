@@ -1,5 +1,11 @@
+import 'package:aidstore/components/profile/profile_edit.dart';
+import 'package:aidstore/components/profile/profile_info.dart';
+import 'package:aidstore/models/user.dart';
 import 'package:flutter/material.dart';
 import '../components/bottom_menu.dart';
+import '../components/profile/edit_controllers.dart';
+
+// import '../models/listing.dart';
 
 
 class ProfilePage extends StatefulWidget {
@@ -11,6 +17,7 @@ class ProfilePage extends StatefulWidget {
 
 class ProfilePageState extends State<ProfilePage> {
   final int selectedIndex = 2;
+  bool isEditing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,58 +30,34 @@ class ProfilePageState extends State<ProfilePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  'https://avatars.githubusercontent.com/u/83920644?s=400&u=0d424933b73f12366cc94dcb7dccedf30f85bbfb&v=4',
-                  width: 360,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Icon(Icons.person),
-                      SizedBox(width: 8),
-                      Text(
-                        'svo22',
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  isEditing ? const ProfileEdit() : const ProfileInfo(),
+                  const SizedBox(height: 32,),
+                  FilledButton(
+                    onPressed: () {
+                      currentUser.username = nameController.text;
+                      currentUser.email = emailController.text;
+                      currentUser.phone = phoneController.text;
+                      currentUser.city = cityController.text;
+                      setState(() {
+                        isEditing = !isEditing;
+                      });
+                    },
+                    style: FilledButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(165, 192, 91, 1), 
+                      foregroundColor: Colors.white,
+                    ),
+                    child: Text(
+                      isEditing ? 'Сохранить' : 'Редактировать',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.mail),
-                      SizedBox(width: 8),
-                      Text(
-                        'svo22@gmail.com',
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.phone),
-                      SizedBox(width: 8),
-                      Text(
-                        '[REDACTED]',
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),

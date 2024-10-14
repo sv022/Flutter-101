@@ -37,25 +37,27 @@ class ProfilePageState extends State<ProfilePage> {
                 children: [
                   isEditing ? const ProfileEdit() : const ProfileInfo(),
                   const SizedBox(height: 32,),
-                  FilledButton(
-                    onPressed: () {
-                      currentUser.username = nameController.text;
-                      currentUser.email = emailController.text;
-                      currentUser.phone = phoneController.text;
-                      currentUser.city = cityController.text;
-                      setState(() {
-                        isEditing = !isEditing;
-                      });
-                    },
-                    style: FilledButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(165, 192, 91, 1), 
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Text(
-                      isEditing ? 'Сохранить' : 'Редактировать',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
+                  Center(
+                    child: FilledButton(
+                      onPressed: () {
+                        currentUser.username = nameController.text;
+                        currentUser.email = emailController.text;
+                        currentUser.phone = phoneController.text;
+                        currentUser.city = cityController.text;
+                        setState(() {
+                          isEditing = !isEditing;
+                        });
+                      },
+                      style: FilledButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(165, 192, 91, 1), 
+                        foregroundColor: Colors.white,
+                      ),
+                      child: Text(
+                        isEditing ? 'Сохранить' : 'Редактировать',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 32,
+                        ),
                       ),
                     ),
                   ),

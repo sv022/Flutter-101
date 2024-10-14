@@ -21,7 +21,7 @@ class AuthPage extends StatelessWidget {
               FilledButton(
                 onPressed: () {
                   currentUser = User(
-                    0,
+                    1,
                     "svo0",
                     "svo0@mail.com",
                     "pass1",

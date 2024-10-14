@@ -79,14 +79,17 @@ class AddListingPage extends StatelessWidget {
                         adressController.text, 
                         [], 
                         DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day).toString(), 
-                        ['placeholder'], false);
+                        ['placeholder'], 
+                        false,
+                        false,
+                      );
 
-                        listings.add(newListing);
+                      listings.add(newListing);
 
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
                       
                       localId++;
                     },

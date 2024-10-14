@@ -16,7 +16,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class ProfilePageState extends State<ProfilePage> {
-  final int selectedIndex = 2;
+  final int selectedIndex = 3;
   bool isEditing = false;
 
   @override

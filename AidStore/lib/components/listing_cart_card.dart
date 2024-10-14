@@ -3,14 +3,14 @@ import '../pages/listing_page.dart';
 import '../models/listing.dart';
 
 
-class ListingCard extends StatefulWidget {
-  const ListingCard({super.key, required this.listing});
+class ListingCartCard extends StatefulWidget {
+  const ListingCartCard({super.key, required this.listing});
   final Listing listing;
   @override
-  ListingCardState createState() => ListingCardState();
+  ListingCartCardState createState() => ListingCartCardState();
 }
 
-class ListingCardState extends State<ListingCard> {  
+class ListingCartCardState extends State<ListingCartCard> {  
   @override
   Widget build(BuildContext context){
     return Card(
@@ -100,18 +100,31 @@ class ListingCardState extends State<ListingCard> {
                       ],
                     ),
                     const SizedBox(height: 10),
-
                     Row(
-                    children: [
-                      Text(
-                        widget.listing.adress,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            if (listingCart.contains(widget.listing)){
+                              listingCart.removeAt(listingCart.lastIndexOf(widget.listing));
+                            }
+                            widget.listing.isCart = listingCart.contains(widget.listing);
+                          });
+                        }, 
+                        icon: const Icon(Icons.remove)
                         ),
-                      ),
-                    ],
-                  )
+                        Text(
+                          listingCart.where((l) => l == widget.listing).length.toString()
+                        ),
+                        IconButton(onPressed: () {
+                          setState(() {
+                            listingCart.add(widget.listing);
+                          });
+                        }, 
+                        icon: const Icon(Icons.add)
+                        ),
+                      ],
+                    )
+                    
                   ],
                 ),
               ),

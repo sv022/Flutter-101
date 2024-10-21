@@ -1,5 +1,4 @@
 import 'package:aidstore/pages/cart_page.dart';
-import 'package:aidstore/pages/favorites_page.dart';
 import 'package:aidstore/pages/home_page.dart';
 import 'package:aidstore/pages/profile_page.dart';
 import 'package:aidstore/pages/auth_page.dart';
@@ -29,16 +28,10 @@ class BottomMenuState extends State<BottomMenu> {
       else if (index == 1){
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const FavoritesPage()),
-        );
-      }
-      else if (index == 2){
-        Navigator.push(
-            context,
             MaterialPageRoute(builder: (context) => const CartPage()),
         );
       }
-      else if (index == 3){
+      else if (index == 2){
         if (currentUser.id == 0){
           Navigator.push(
               context,
@@ -59,19 +52,15 @@ class BottomMenuState extends State<BottomMenu> {
     return BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: 'Главная',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Избранное',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.shopping_cart_outlined),
             label: 'Корзина',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outlined),
             label: 'Профиль',
           ),
           

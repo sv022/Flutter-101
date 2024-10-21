@@ -1,19 +1,18 @@
-import 'package:aidstore/pages/add_listing_page.dart';
+import 'package:aidstore/models/services.dart';
 import 'package:flutter/material.dart';
-import '../components/listing_cart_card.dart';
+import '../components/service_cart_card.dart';
 import '../components/bottom_menu.dart';
-import '../models/listing.dart';
 
 
-List<Listing> getUniqueListings(){
-    List<Listing> uniqueListings = [];
+List<Service> getUniqueServices(){
+    List<Service> uniqueServices = [];
 
-    for (Listing l in listingCart){
-      if (!uniqueListings.contains((l))){
-        uniqueListings.add(l);
+    for (Service l in serviceCart){
+      if (!uniqueServices.contains((l))){
+        uniqueServices.add(l);
       }
     }
-    return uniqueListings;
+    return uniqueServices;
 }
 
 class CartPage extends StatefulWidget {
@@ -24,43 +23,32 @@ class CartPage extends StatefulWidget {
 }
 
 class CartPageState extends State<CartPage> {
-  final int selectedIndex = 2;
-  List<Listing> uniqueListings = getUniqueListings();
+  final int selectedIndex = 1;
+  List<Service> uniqueServices = getUniqueServices();
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-        title: Image.network(
-          'https://raw.githubusercontent.com/sv022/MusicTrade/refs/heads/main/images/guitar_logo.png',
-          height: 50,
+        toolbarHeight: 128.0,
+        title: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Text(
+            'Корзина',
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
         ),
       ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1.45 / 2,
-            mainAxisSpacing: 2,
-          ),
-          itemCount: uniqueListings.length,
+        child: ListView.builder(
+          itemCount: uniqueServices.length,
           itemBuilder: (BuildContext context, int index) {
-            return ListingCartCard(listing: uniqueListings[index]);
+            return ServiceCartCard(service: uniqueServices[index]);
           },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddListingPage()),
-          )
-        },
-        tooltip: 'Add Note',
-        child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomMenu(selectedIndex: selectedIndex),
     );

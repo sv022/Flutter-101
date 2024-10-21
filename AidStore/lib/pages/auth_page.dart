@@ -35,7 +35,7 @@ class AuthPage extends StatelessWidget {
                   );
                 },
                 style: FilledButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(165, 192, 91, 1), 
+                  backgroundColor: const Color.fromRGBO(26, 111, 238, 1), 
                   foregroundColor: Colors.white,
                 ),
                 child: const Text(
@@ -52,12 +52,12 @@ class AuthPage extends StatelessWidget {
                   1 + 1;
                 },
                 style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Color.fromRGBO(165, 192, 91, 1)),
+                  side: const BorderSide(color: Color.fromRGBO(26, 111, 238, 1)),
                 ),
                 child: const Text(
                   'Регистрация',
                   style: TextStyle(
-                    color:Color.fromRGBO(165, 192, 91, 1),
+                    color:Color.fromRGBO(26, 111, 238, 1),
                     fontSize: 40,
                   ),
                 ),

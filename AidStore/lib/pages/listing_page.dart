@@ -1,3 +1,5 @@
+import 'package:aidstore/api/service.dart';
+import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../models/listing.dart';
 
@@ -82,6 +84,28 @@ class ListingPage extends StatelessWidget {
                 ],
               ),
             ),
+            
+            const SizedBox(height: 32),
+
+            Row(
+              children: [
+                IconButton(onPressed: () {
+                  ApiService().delProduct(listing.id);
+                  // listingsOld.remove(listing);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                }, 
+                icon: const Icon(Icons.delete)
+                ),
+                IconButton(onPressed: () {
+                  // WIP
+                }, 
+                icon: const Icon(Icons.edit)
+                )
+              ],
+            )
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:aidstore/api/service.dart';
 import 'package:aidstore/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import '../models/listing.dart';
@@ -84,7 +85,8 @@ class AddListingPage extends StatelessWidget {
                         false,
                       );
 
-                      listingsOld.add(newListing);
+                      ApiService().addProduct(newListing);
+                      // listingsOld.add(newListing);
 
                       Navigator.push(
                         context,

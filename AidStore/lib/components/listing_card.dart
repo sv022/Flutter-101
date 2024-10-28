@@ -44,21 +44,21 @@ class ListingCardState extends State<ListingCard> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
                       height: 80,
                       child: Text(
                         widget.listing.title,
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
 
-                    const SizedBox(height: 16),
-
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           '${widget.listing.price}₽',
@@ -68,39 +68,40 @@ class ListingCardState extends State<ListingCard> {
                             color: Color.fromARGB(255, 55, 55, 55),
                           ),
                         ),
-                        const SizedBox(width: 100,),
-                        IconButton(onPressed: () {
-                          setState(() {
-                            if (widget.listing.isCart) {
-                              listingCart.remove(widget.listing);
-                            } else {
-                              listingCart.add(widget.listing);
-                            }
-                            widget.listing.isCart = !widget.listing.isCart;
-                          });
-                        }, 
-                        icon: widget.listing.isCart ? 
-                          const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 183, 108, 51)) : 
-                          const Icon(Icons.shopping_cart_outlined) 
+                        Row(
+                          children: [
+                            IconButton(onPressed: () {
+                              setState(() {
+                                if (widget.listing.isCart) {
+                                  listingCart.remove(widget.listing);
+                                } else {
+                                  listingCart.add(widget.listing);
+                                }
+                                widget.listing.isCart = !widget.listing.isCart;
+                              });
+                            }, 
+                            icon: widget.listing.isCart ? 
+                              const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 183, 108, 51)) : 
+                              const Icon(Icons.shopping_cart_outlined) 
+                            ),
+                            IconButton(onPressed: () {
+                              setState(() {
+                                if (widget.listing.isFavorite) {
+                                  favoriteListings.remove(widget.listing);
+                                } else {
+                                  favoriteListings.add(widget.listing);
+                                }
+                                widget.listing.isFavorite = !widget.listing.isFavorite;
+                              });
+                            }, 
+                            icon: widget.listing.isFavorite ? 
+                              const Icon(Icons.favorite, color: Color.fromARGB(255, 183, 108, 51)) : 
+                              const Icon(Icons.favorite_border_outlined) 
+                            )
+                          ],
                         ),
-                        IconButton(onPressed: () {
-                          setState(() {
-                            if (widget.listing.isFavorite) {
-                              favoriteListings.remove(widget.listing);
-                            } else {
-                              favoriteListings.add(widget.listing);
-                            }
-                            widget.listing.isFavorite = !widget.listing.isFavorite;
-                          });
-                        }, 
-                        icon: widget.listing.isFavorite ? 
-                          const Icon(Icons.favorite, color: Color.fromARGB(255, 183, 108, 51)) : 
-                          const Icon(Icons.favorite_border_outlined) 
-                        )
                       ],
                     ),
-                    const SizedBox(height: 10),
-
                     Row(
                     children: [
                       Text(

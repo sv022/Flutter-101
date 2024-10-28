@@ -47,16 +47,16 @@ class HomePageState extends State<HomePage> {
               return const Center(child: Text('No products found'));
             }
 
-            final listings = snapshot.data!;
+            // final listings = snapshot.data!;
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.55 / 2,
+                childAspectRatio: 1.25 / 2,
                 mainAxisSpacing: 2,
               ),
-              itemCount: listings.length,
+              itemCount: listingsOld.length,
               itemBuilder: (BuildContext context, int index) {
-                return ListingCard(listing: listings[index]);
+                return ListingCard(listing: listingsOld[index]);
               },
             );
           }

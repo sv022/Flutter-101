@@ -23,3 +23,9 @@
 <br>
 ![alt text](assets/Image85.png)
 <br>
+
+Список запросов:
+`GET http://10.192.229.176:9876/listing/$id - Получить товар id`
+`GET http://10.192.229.176:9876/listings - Получить все товары`
+`POST http://10.192.229.176:9876/listing- добавить товар`
+`DELETE http://10.192.229.176:9876/listing/$id - Удалить товар id`

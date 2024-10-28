@@ -14,7 +14,7 @@ class Listing {
   Listing(this.id, this.title, this.price, this.category, this.description, 
   this.adress, this.tags, this.publishDate, this.img, this.isFavorite, this.isCart);
 
-  factory Listing.fromJson(Map<String, dynamic> json) {
+  factory Listing.fromJson(Map<dynamic, dynamic> json) {
     return Listing(
       json['id'],
       json['title'],
@@ -31,7 +31,7 @@ class Listing {
   }
 }
 
-List<Listing> listings = [
+List<Listing> listingsOld = [
   Listing(
     1,
     "Fender Deluxe Reverb Drip Edge Guitar Combo 1968 - 1969",

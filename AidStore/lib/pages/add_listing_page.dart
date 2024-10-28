@@ -84,7 +84,7 @@ class AddListingPage extends StatelessWidget {
                         false,
                       );
 
-                      listings.add(newListing);
+                      listingsOld.add(newListing);
 
                       Navigator.push(
                         context,

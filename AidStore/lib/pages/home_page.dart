@@ -1,3 +1,4 @@
+import 'package:aidstore/api/service.dart';
 import 'package:aidstore/pages/add_listing_page.dart';
 import 'package:flutter/material.dart';
 import '../components/listing_card.dart';
@@ -15,6 +16,14 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   final int selectedIndex = 0;
 
+  late Future<List<Listing>> _listings;
+
+  @override
+  void initState() {
+    super.initState();
+    _listings = ApiService().getProducts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,17 +36,31 @@ class HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1.55 / 2,
-            mainAxisSpacing: 2,
-          ),
-          itemCount: listings.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListingCard(listing: listings[index]);
-          },
-        ),
+        child: FutureBuilder<List<Listing>>(
+          future: _listings, 
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+              return const Center(child: Text('No products found'));
+            }
+
+            final listings = snapshot.data!;
+            return GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.55 / 2,
+                mainAxisSpacing: 2,
+              ),
+              itemCount: listings.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListingCard(listing: listings[index]);
+              },
+            );
+          }
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {

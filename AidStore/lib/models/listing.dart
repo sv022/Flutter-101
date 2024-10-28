@@ -13,6 +13,22 @@ class Listing {
 
   Listing(this.id, this.title, this.price, this.category, this.description, 
   this.adress, this.tags, this.publishDate, this.img, this.isFavorite, this.isCart);
+
+  factory Listing.fromJson(Map<String, dynamic> json) {
+    return Listing(
+      json['id'],
+      json['title'],
+      json['price'].toInt(),
+      json['category'],
+      json['decription'],
+      json['adress'],
+      [],
+      json['publishDate'],
+      json['img'],
+      false,
+      false
+    );
+  }
 }
 
 List<Listing> listings = [

@@ -33,7 +33,7 @@ class ServiceCartCardState extends State<ServiceCartCard> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '${widget.service.price * widget.service.patientCount} ₽',
+              '${widget.service.price} ₽',
               style: const TextStyle(
                 fontSize: 16,
                 color: Colors.black,

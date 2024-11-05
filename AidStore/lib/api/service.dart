@@ -38,7 +38,7 @@ class ApiService {
 
   void addProduct(Listing listing) async {
     try {
-      final response = await _dio.post('http://10.192.229.176:9876/listing', data: listing);
+      final response = await _dio.post('http://127.0.0.1:9876/listing', data: listing.toJson());
       if (response.statusCode == 200) {
         return;
       } else {
@@ -51,7 +51,7 @@ class ApiService {
 
   void delProduct(int id) async {
     try {
-      final response = await _dio.delete('http://10.192.229.176:9876/listing/$id');
+      final response = await _dio.delete('http://127.0.0.1:9876/listing/$id');
       if (response.statusCode == 200) {
         return;
       } else {

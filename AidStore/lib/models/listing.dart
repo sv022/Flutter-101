@@ -35,6 +35,20 @@ class Listing {
       false
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'price': price,
+      'category': category,
+      'decription': description,
+      'adress': adress,
+      'tags': [],
+      'publishDate': publishDate,
+      'img': img
+    };
+  }
 }
 
 List<Listing> listingsOld = [

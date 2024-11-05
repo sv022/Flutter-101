@@ -104,11 +104,16 @@ class ListingCardState extends State<ListingCard> {
                     ),
                     Row(
                     children: [
-                      Text(
-                        widget.listing.adress,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
+                      SizedBox(
+                        width: 175,
+                        child: Text(
+                          widget.listing.adress,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            overflow: TextOverflow.fade
+                          ),
+                          maxLines: 1,
                         ),
                       ),
                     ],

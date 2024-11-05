@@ -6,12 +6,14 @@ class ApiService {
 
   Future<List<Listing>> getProducts() async {
     try {
-      final response = await _dio.get('http://10.192.229.176:9876/listings');
+      final response = await _dio.get('http://127.0.0.1:9876/listings');
       if (response.statusCode == 200) {
-        List<Listing> products = response.data
-          .map<Listing>((product) => Listing.fromJson(product))
-          .toList();
-        return products;
+        List<Listing> listingsR = [];
+        for (dynamic l in response.data){
+          // for (String k in )
+          listingsR.add(Listing.fromJson(l));
+        }
+        return listingsR;
       } else {
         throw Exception('Failed to load products');
       }

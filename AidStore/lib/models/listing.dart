@@ -14,17 +14,23 @@ class Listing {
   Listing(this.id, this.title, this.price, this.category, this.description, 
   this.adress, this.tags, this.publishDate, this.img, this.isFavorite, this.isCart);
 
-  factory Listing.fromJson(Map<dynamic, dynamic> json) {
+  factory Listing.fromJson(dynamic json) {
+
+    List<String> img = [];
+    for (dynamic i in json["img"]){
+      img.add(i.toString());
+    }
+
     return Listing(
       json['id'],
-      json['title'],
+      json['title'] ?? "ERR",
       json['price'].toInt(),
-      json['category'],
-      json['decription'],
-      json['adress'],
+      json['category'] ?? "ERR",
+      json['decription'] ?? "ERR",
+      json['adress'] ?? "ERR",
       [],
-      json['publishDate'],
-      json['img'],
+      json['publishDate'] ?? "ERR",
+      img,
       false,
       false
     );
